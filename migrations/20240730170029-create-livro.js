@@ -10,15 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       qtd_paginas: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       categoria: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       autor: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

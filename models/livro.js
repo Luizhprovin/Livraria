@@ -14,10 +14,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Livro.init({
-    nome: DataTypes.STRING,
-    qtd_paginas: DataTypes.INTEGER,
-    categoria: DataTypes.STRING,
-    autor: DataTypes.STRING
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true }
+    },
+    qtd_paginas: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: { min: 1 }
+    },
+    categoria: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true }
+    },
+    autor: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true }
+    }
   }, {
     sequelize,
     modelName: 'Livro',
